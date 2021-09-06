@@ -74,7 +74,7 @@ listItemSeparator = () => {
       />
       <View>
        <Text>{strings.AUTHOR_NAME + authorName}</Text>
-       <Text>{strings.SHA + "sha"}</Text>
+       <Text>{strings.SHA + sha}</Text>
        <Text>{strings.COMMIT_MSG + commmitMsg}</Text>
       </View>
        
