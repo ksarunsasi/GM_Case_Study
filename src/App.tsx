@@ -17,7 +17,7 @@
    useColorScheme,
    View,
  } from 'react-native';
-import strings from './strings';
+import strings from './Common/strings';
 
 interface Props{}
 interface State{
