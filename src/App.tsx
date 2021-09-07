@@ -24,7 +24,7 @@ interface State{
   commitDetails:any;
   isLoadError:boolean
 }
- class App extends React.PureComponent<Props>{
+ class App extends React.PureComponent<Props,State>{
 
   constructor(props){
     super(props)
@@ -36,20 +36,24 @@ interface State{
   }
 
   componentDidMount(){
-    this.fetchCommitsDetails();
+    this.fetchCommitsDetails("ksarunsasi","GM_Case_Study");
   }
 
-  fetchCommitsDetails = async () =>{
+  fetchCommitsDetails = async (username: string, repo: string) =>{
     try {
       const response = await fetch(
-        // 'https://api.github.com/repos/octocat/hello-world/commits'
-        'https://api.github.com/repos/ksarunsasi/GM_Case_Study/commits'
+        `https://api.github.com/repos/${username}/${repo}/commits`
       );
       const commmitDetailsResp = await response.json();
-      this.setState({commitDetails: []})
+      if(commmitDetailsResp?.message === strings.NOT_FOUND){
+        this.setState({commitDetails: []})
+      }else{
+        this.setState({commitDetails: commmitDetailsResp})
+      }
+     
     } catch (error) {
       this.setState({ isLoadError: true})
-      console.error(error);
+      // console.error(error);
     }
   }
 

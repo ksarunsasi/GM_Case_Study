@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#000000",
+        "flex": 1,
+        "fontSize": 18,
+        "fontWeight": "bold",
+        "textAlign": "center",
+        "textAlignVertical": "center",
+      }
+    }
+  >
+    No commits
+  </Text>
+</View>
+`;
